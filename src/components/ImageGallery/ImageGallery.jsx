@@ -26,7 +26,7 @@ export class ImageGallery extends Component {
           .then(res => res.json())
           .then(images => this.setState({ images }))
           .finally(() => this.setState({ loading: false }));
-      }, 1500);
+      }, 500);
     }
   }
 
