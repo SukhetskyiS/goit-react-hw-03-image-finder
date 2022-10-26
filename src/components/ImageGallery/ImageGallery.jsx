@@ -9,7 +9,7 @@ export class ImageGallery extends Component {
     return (
       <>
         <ul className="imageGallery">
-          <ImageGalleryItem />
+          <ImageGalleryItem imagesName={this.props.imagesName} />
           <Loader />
         </ul>
         <Button />
