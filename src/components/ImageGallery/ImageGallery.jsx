@@ -17,7 +17,10 @@ export class ImageGallery extends Component {
     const { imagesName } = this.props;
     const { per_page, key, API, page } = this.state;
 
-    if (prevProps.imagesName !== imagesName) {
+    if (
+      prevProps.imagesName !== imagesName ||
+      prevState.per_page !== per_page
+    ) {
       this.setState({ loading: true });
 
       fetch(
@@ -30,7 +33,7 @@ export class ImageGallery extends Component {
   }
 
   handleMore = () => {
-    this.setState(({ page }) => ({ page: page + 1 }));
+    this.setState(({ per_page }) => ({ per_page: per_page + 12 }));
   };
 
   render() {
