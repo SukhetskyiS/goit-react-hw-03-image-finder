@@ -20,7 +20,6 @@ export class ImageGalleryItem extends Component {
   render() {
     const { imagesName } = this.props;
     const { showModal, activeImageIdx } = this.state;
-    const activeTab = imagesName.hits[activeImageIdx];
 
     return (
       <>
@@ -39,7 +38,9 @@ export class ImageGalleryItem extends Component {
             </li>
           ))}
         {showModal && (
-          <Modal onClose={this.toggleModal}>{activeTab.largeImageURL}</Modal>
+          <Modal onClose={this.toggleModal}>
+            {imagesName.hits[activeImageIdx].largeImageURL}
+          </Modal>
         )}
       </>
     );
