@@ -6,6 +6,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 export class App extends Component {
   state = {
     imagesName: '',
+    per_page: 12,
   };
 
   hasFormSubmit = imagesName => {

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from './Button/Button';
 import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
 import { Loader } from './Loader/Loader';
@@ -41,12 +42,16 @@ export class ImageGallery extends Component {
 
     return (
       <>
-        {loading && <Loader />}
         <ul className="imageGallery">
           <ImageGalleryItem imagesName={images} />
         </ul>
         {images && <Button onAddImg={this.handleMore} />}
+        {loading && <Loader />}
       </>
     );
   }
 }
+
+ImageGallery.propTypes = {
+  images: PropTypes.string,
+};
